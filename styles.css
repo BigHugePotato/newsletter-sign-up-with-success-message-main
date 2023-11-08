@@ -27,7 +27,7 @@ h1 {
 
 body {
   display: flex;
-  min-width: 1440px;
+  max-width: 1440px;
   height: 100vh;
   background-color: hsl(235, 18%, 26%);
   align-items: center;
@@ -35,8 +35,7 @@ body {
 }
 
 main {
-  width: 100vw;
-  height: 50vh;
+    width: 900px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 20px;
@@ -83,8 +82,11 @@ main {
   border: none;
 }
 
-.right-container svg {
-  padding-left: 45px;
+.right-container img {
+    padding-left: 40px;
+}
+.right-container #svg2 {
+    display: none;
 }
 
 
@@ -94,31 +96,38 @@ main {
 
 
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 375px) {
   body {
-    background-color: aqua;
+    padding: 0;
+    background-color: white;
   }
 
   main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
     width: 375px;
-    padding: 10px;
+    height: 100vh;
+    padding: 0px;
+    margin: 0;
+    border-radius: 0;
   }
 
   .right-container,
     .left-container {
         order: 1;
-        background-color: blue;
     }
 
-  .right-container svg {
-    width: 100%; /* Make SVG responsive */
-    height: auto; /* Maintain the aspect ratio */
-    max-width: 100%; /* Limit SVG to the width of its container */
-    padding-left: 0; /* Remove any padding that may affect the sizing */
+  .right-container #svg1{
+    display: none;
+  }
+    .right-container{
+    display: flex;
 
+  }
+    .right-container #svg2{
+    display: flex;
+    padding: 0;
+    object-fit: scale-down;
   }
 
   .left-container {
@@ -126,13 +135,23 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 25px;
+    padding: 10px 20px 20px 20px;
   }
+
+
+
+
+.left-container #join-p {
+    margin: 0;
+}
+
   .buttons {
     max-width: 100%;
   }
   h1 {
-    font-size: 26px;
-    text-align: start;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
   }
 }
